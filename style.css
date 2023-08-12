@@ -1,0 +1,143 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    background-image: url(grafiken/pokeball-lichtring.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    user-select: none;
+    font-family: 'Roboto';
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    margin: 0.3em 1em 0.5em 1em;
+    cursor: pointer;
+}
+
+h4 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5em;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: #00000073;
+    width: -webkit-fill-available;
+}
+
+.search-pokemon {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.options input {
+    width: 100px;
+    outline: none;
+}
+
+.filter-options {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: fit-content;
+    background-color: black;
+    color: red;
+    overflow: auto;
+    max-height: 100px;
+}
+
+.close-filter-options {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.filter-options div {
+    display: flex;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 120px;
+}
+
+.card-small {
+    height: 320px;
+    width: 230px;
+    border: 3px solid;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-front-small {
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+
+.card-back-small {
+    backface-visibility: hidden;
+    background-color: blue;
+    transform: rotateY(180deg);
+}
+
+.backgroundcard-small {
+    margin: 20px;
+}
+
+.card-header-small {
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: space-evenly;
+}
+
+.pokemon-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.element-icon img {
+    padding: 0 1em;
+    height: 35px;
+}
+
+.show-more {
+    display: flex;
+    justify-content: center;
+}

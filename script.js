@@ -23,12 +23,10 @@ async function loadPokemons() {
 
 async function loadTheRest() {
     for (let i = 0; i < Math.ceil((maxLimit - firstLimit) / offset); i++) {
-
         let url = `https://pokeapi.co/api/v2/pokemon?offset=${firstLimit+offset*i}&limit=${offset}`;
         let response = await fetch(url);
         let tempPokemons = await response.json();
         const pokemonUrls = tempPokemons.results.map(pokemon => pokemon.url);
-
         await fetchPokemonsUrls(pokemonUrls)
             .then(data => {
                 allPokemons = allPokemons.concat(data);
@@ -76,18 +74,30 @@ async function renderAllPokemons() {
 
 function renderPokemon(content) {
     let img = currentPokemon.sprites.other.dream_world.front_default != null ? currentPokemon.sprites.other.dream_world.front_default : currentPokemon.sprites.front_default;
-    content.innerHTML += `<div class="backgroundcard-small" onmouseenter="rotateYAxis(this);" onclick="renderSinglePokemon(${Number(currentPokemon.id)}-1);">
-    <div class="card-small card-front-small ${currentPokemon.types[0].type.name}"  onclick="renderSinglePokemon(${Number(currentPokemon.id)}-1);">
-    <div class="card-header-small">
-        <h4>#${currentPokemon.id}</h4>
-        <h2>${currentPokemon.name}</h2>
-    </div>
-    <div class="pokemon-pic"style="background-image: url('${img}');">
-    </div>
-    <div class="element-icon" id="element-icon">${generateElementIcons()}</div>
-</div>
-<div class="card-back-small">Rückseite</div>
-</div>`;
+
+    content.innerHTML +=
+        `<div class="card-small-wrapper" onclick="renderSinglePokemon(${Number(currentPokemon.id)}-1);">
+            <div class="card-small ${currentPokemon.types[0].type.name}" onmouseenter="rotateYAxis(this);">
+                <div class="card-front-small">
+                    <div class="card-header-small">
+                        <h4>#${currentPokemon.id}</h4>
+                        <h2>${currentPokemon.name}</h2>
+                    </div>
+                    <div class="pokemon-pic"style="background-image: url('${img}');">
+                    </div>
+                    <div class="element-icon" id="element-icon">${generateElementIcons()}
+                    </div>
+                </div>
+                <div class="card-back-small">
+                <svg width="150" height="100" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50" y="100" font-family="Arial" font-size="28" fill="blue" stroke="yellow" stroke-width="0.5" text-anchor="middle" alignment-baseline="middle">
+                    <textPath xlink:href="#curve">Pokémon</textPath></text>
+                    <path id="curve" d="M25 70 Q75 50 125 70" fill="none" />
+                </svg>
+              <img src="grafiken/pokeball1.png">
+                </div>
+            </div>
+        </div>`;
 }
 
 function showMore() {
@@ -101,7 +111,6 @@ function showMore() {
         currentPokemon = pokemon;
         renderPokemon(content);
     }
-
 }
 
 function generateElementIcons() {
@@ -220,17 +229,9 @@ window.addEventListener('scroll', () => {
 })
 
 function rotateYAxis(element) {
-    console.log('Transition', element.style.transition !== '')
-    if (element.style.transition == '') {
-        console.log('Start reset timer');
-        setTimeout(() => {
-            console.log('Reseted by timeout');
-            element.style.transition = "";
-            element.style.transform = "";
-        }, 1500);
-        element.style.transition = "transform 1.5s linear";
-        element.style.transform = "rotateY(360deg)";
-    } else {
-        console.error('There is a transition already', element.style.transition)
-    }
+    element.style.transition = "none"; // Remove transition temporarily
+    element.style.transform = "rotateY(0deg)"; // Reset rotation
+    getComputedStyle(element).transform; // Trigger reflow
+    element.style.transition = "transform 1.5s linear"; // Restore transition
+    element.style.transform = "rotateY(360deg)";
 }

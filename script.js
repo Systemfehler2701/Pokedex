@@ -3,6 +3,13 @@ let allPokemons = [];
 let firstLimit = 50;
 let maxLimit = 0;
 let offset = 300;
+let filterOn = false;
+
+function init() {
+    renderAllPokemons();
+    renderFilterOptions();
+}
+
 
 async function loadPokemons() {
     let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=${firstLimit}`;
@@ -104,6 +111,9 @@ function showMore() {
     // get latest pokemon
     let content = document.getElementById('main-content');
     let currentCount = document.querySelector('#main-content').childElementCount;
+    if (filterOn) {
+        return;
+    }
     for (let i = currentCount; i < currentCount + 100; i++) {
         const pokemon = allPokemons[i];
         pokemon.name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);

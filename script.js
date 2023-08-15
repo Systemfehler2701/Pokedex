@@ -95,13 +95,7 @@ function renderPokemon(content) {
                     <div class="element-icon" id="element-icon">${generateElementIcons()}
                     </div>
                 </div>
-                <div class="card-back-small">
-                <svg width="150" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <text x="50" y="100" font-family="Arial" font-size="28" fill="blue" stroke="yellow" stroke-width="0.5" text-anchor="middle" alignment-baseline="middle">
-                    <textPath xlink:href="#curve">Pokémon</textPath></text>
-                    <path id="curve" d="M25 70 Q75 50 125 70" fill="none" />
-                </svg>
-              <img src="grafiken/pokeball1.png">
+                <div class="card-back-small">              
                 </div>
             </div>
         </div>`;

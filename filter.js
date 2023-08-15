@@ -47,19 +47,20 @@ function addEventListeners() {
 function renderAllPokemonsWithFilter() {
     filterOn = true;
     let type = '';
+    let name = document.getElementById('pokemon-input').value;
     if (document.querySelector('.type:checked') != null) {
         type = document.querySelector('.type:checked').value;
     }
     let content = document.getElementById('main-content');
     content.innerHTML = ``;
-    if (type == '') {
+    if (type == '' && name == '') {
         filterOn = false;
         showMore();
         return;
     }
     allPokemons.forEach(pokemon => {
         currentPokemon = pokemon;
-        if (currentPokemon.types.map(pokemonType => pokemonType.type.name).indexOf(type) >= 0) {
+        if ((type == '' || currentPokemon.types.map(pokemonType => pokemonType.type.name).indexOf(type) >= 0) && pokemon.name.toLowerCase().indexOf(name.toLowerCase()) == 0) {
             pokemon.name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
             pokemon.id = ("0000" + pokemon.id).slice(-4);
             renderPokemon(content);

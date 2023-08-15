@@ -56,7 +56,7 @@ h4 {
 }
 
 .options input {
-    width: 100px;
+    width: 120px;
     outline: none;
 }
 
@@ -127,7 +127,10 @@ h4 {
     align-items: center;
     border-radius: 20px;
     backface-visibility: hidden;
-    background-color: rgb(28, 28, 133);
+    background-image: url(grafiken/pokemon-weltall.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     transform: rotateY(180deg);
 }
 

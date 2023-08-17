@@ -1,7 +1,7 @@
 let currentPokemon;
 let allPokemons = [];
 let firstLimit = 50;
-let maxLimit = 0;
+let maxLimit = 1010;
 let offset = 300;
 let filterOn = false;
 
@@ -15,7 +15,6 @@ async function loadPokemons() {
     let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=${firstLimit}`;
     let response = await fetch(url);
     let tempPokemons = await response.json();
-    maxLimit = tempPokemons.count;
 
     const pokemonUrls = tempPokemons.results.map(pokemon => pokemon.url);
 
@@ -30,7 +29,12 @@ async function loadPokemons() {
 
 async function loadTheRest() {
     for (let i = 0; i < Math.ceil((maxLimit - firstLimit) / offset); i++) {
-        let url = `https://pokeapi.co/api/v2/pokemon?offset=${firstLimit+offset*i}&limit=${offset}`;
+        let calculatedOffset = firstLimit + offset * i;
+        let calculatedLimit = offset;
+        if ((firstLimit + offset * i + offset) > maxLimit) {
+            calculatedLimit = maxLimit - allPokemons.length;
+        }
+        let url = `https://pokeapi.co/api/v2/pokemon?offset=${calculatedOffset}&limit=${calculatedLimit}`;
         let response = await fetch(url);
         let tempPokemons = await response.json();
         const pokemonUrls = tempPokemons.results.map(pokemon => pokemon.url);

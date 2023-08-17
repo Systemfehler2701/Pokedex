@@ -45,18 +45,19 @@ h4 {
     position: fixed;
     top: 0;
     z-index: 1;
-    background-color: #00000073;
+    background-color: #000000c7;
     width: -webkit-fill-available;
 }
 
 .search-pokemon {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     width: 300px;
 }
 
 .options input {
     width: 120px;
+    margin: 0 20px;
     outline: none;
 }
 
@@ -75,7 +76,7 @@ h4 {
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
-    margin: 10px;
+    margin: 0 10px;
 }
 
 .filter-options div {

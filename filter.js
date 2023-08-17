@@ -32,23 +32,38 @@ function addEventListeners() {
     });
 }
 
+// sucht alle Pokemon mit dem gefilterten Typ
 function renderAllPokemonsWithFilter() {
-    filterOn = true;
-    let type = '';
-    let name = document.getElementById('pokemon-input').value;
-    if (document.querySelector('.type:checked') != null) {
-        type = document.querySelector('.type:checked').value;
-    }
     let content = document.getElementById('main-content');
+    let filterType = getFilterType();
+    let filterName = document.getElementById('pokemon-input').value;
     content.innerHTML = ``;
-    if (type == '' && name == '') {
-        filterOn = false;
+    checkFilterStatus(filterName, filterType);
+    if (filterOn) {
+        renderFilteredPokemons(filterName, filterType, content);
+    } else {
         showMore();
-        return;
     }
+}
+
+function getFilterType() {
+    if (document.querySelector('.type:checked') != null) {
+        return document.querySelector('.type:checked').value;
+    }
+    return '';
+}
+
+function checkFilterStatus(filterName, filterType) {
+    filterOn = true;
+    if (filterType == '' && filterName == '') {
+        filterOn = false;
+    }
+}
+
+function renderFilteredPokemons(filterName, filterType, content) {
     allPokemons.forEach(pokemon => {
         currentPokemon = pokemon;
-        if ((type == '' || currentPokemon.types.map(pokemonType => pokemonType.type.name).indexOf(type) >= 0) && pokemon.name.toLowerCase().indexOf(name.toLowerCase()) == 0) {
+        if ((filterType == '' || currentPokemon.types.map(pokemonType => pokemonType.type.name).indexOf(filterType) >= 0) && pokemon.name.toLowerCase().indexOf(filterName.toLowerCase()) == 0) {
             pokemon.name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
             pokemon.id = ("0000" + pokemon.id).slice(-4);
             renderPokemon(content);

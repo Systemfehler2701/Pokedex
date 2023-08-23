@@ -39,6 +39,10 @@
     justify-content: center;
 }
 
+.card-pic img {
+    width: inherit;
+}
+
 .element-pic {
     display: flex;
     align-items: center;

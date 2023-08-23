@@ -16,6 +16,13 @@ function renderFilterOptions() {
     addEventListeners();
 }
 
+function openFilterOptions() {
+    document.getElementById('filter-options').classList.remove('d-none');
+}
+
+function closeFilterOptions() {
+    document.getElementById('filter-options').classList.add('d-none');
+}
 
 function addEventListeners() {
     // Füge jedem Checkbox-Element einen Event Listener hinzu
@@ -32,7 +39,33 @@ function addEventListeners() {
     });
 }
 
+//übergibt den gefilterten Typ
+function getFilterType() {
+    if (document.querySelector('.type:checked') != null) {
+        return document.querySelector('.type:checked').value;
+    }
+    return '';
+}
+
+//überprüft den Filterstatus
+function checkFilterStatus(filterName, filterType) {
+    filterOn = true;
+    if (filterType == '' && filterName == '') {
+        filterOn = false;
+    }
+}
+
 // sucht alle Pokemon mit dem gefilterten Typ
+function renderFilteredPokemons(filterName, filterType, content) {
+    allPokemons.forEach(pokemon => {
+        if ((filterType == '' || pokemon.types.map(pokemonType => pokemonType.type.name).indexOf(filterType) >= 0) && pokemon.name.toLowerCase().indexOf(filterName.toLowerCase()) == 0) {
+            changeHeaderView(pokemon);
+            renderPokemon(content);
+        }
+    });
+}
+
+//rendert alle Pokemon nach gefiltertem Typ
 function renderAllPokemonsWithFilter() {
     let content = document.getElementById('main-content');
     let filterType = getFilterType();
@@ -44,29 +77,4 @@ function renderAllPokemonsWithFilter() {
     } else {
         showMore();
     }
-}
-
-function getFilterType() {
-    if (document.querySelector('.type:checked') != null) {
-        return document.querySelector('.type:checked').value;
-    }
-    return '';
-}
-
-function checkFilterStatus(filterName, filterType) {
-    filterOn = true;
-    if (filterType == '' && filterName == '') {
-        filterOn = false;
-    }
-}
-
-function renderFilteredPokemons(filterName, filterType, content) {
-    allPokemons.forEach(pokemon => {
-        currentPokemon = pokemon;
-        if ((filterType == '' || currentPokemon.types.map(pokemonType => pokemonType.type.name).indexOf(filterType) >= 0) && pokemon.name.toLowerCase().indexOf(filterName.toLowerCase()) == 0) {
-            pokemon.name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-            pokemon.id = ("0000" + pokemon.id).slice(-4);
-            renderPokemon(content);
-        }
-    });
 }

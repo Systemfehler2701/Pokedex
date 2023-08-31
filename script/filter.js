@@ -9,8 +9,8 @@ function renderFilterOptions() {
         const element = types[i];
         typeFilter += `<div><input type="checkbox" id="${element.toLowerCase()}" value="${element.toLowerCase()}" class="type"><label for="${element.toLowerCase()}">${element}</label></div>`;
     }
-    content.innerHTML = `<div class="filter-options d-none" id="filter-options">
-    <div class="close-filter-options" onclick="closeFilterOptions()">x</div>${typeFilter}
+    content.innerHTML = `<div class="filter-options d-none" id="filter-options"><div class="close-filter-options">
+    <img src="grafiken/close-white.png" onclick="closeFilterOptions()"></div><div class="filter-elements">${typeFilter}</div>
     </div>`;
     checkboxes = document.querySelectorAll('.type');
     addEventListeners();

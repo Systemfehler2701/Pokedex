@@ -1,10 +1,11 @@
 html {
     font-size: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    background-image: url(grafiken/pokeball-lichtring.png);
+    background-image: url(/grafiken/pokeball-lichtring.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -25,8 +26,9 @@ h2 {
 }
 
 h3 {
-    margin: 0.3em 1em 0.5em 1em;
+    margin: 0.3em 0em 0.3em 0em;
     cursor: pointer;
+    font-size: 13px;
 }
 
 h4 {
@@ -48,6 +50,16 @@ h4 {
     width: -webkit-fill-available;
 }
 
+.headline {
+    display: flex;
+    align-items: center;
+}
+
+.headline img {
+    height: 60px;
+    margin-right: 10px;
+}
+
 .search-pokemon {
     display: flex;
     justify-content: flex-end;
@@ -60,27 +72,44 @@ h4 {
     outline: none;
 }
 
+.filter-window {
+    z-index: 4
+}
+
 .filter-options {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 100px;
-    background-color: black;
-    color: red;
+    width: 120px;
+    background-color: #3e3939;
+    color: white;
     overflow: auto;
-    max-height: 100px;
+    max-height: 150px;
+    z-index: 4
 }
 
 .close-filter-options {
     display: flex;
     justify-content: flex-end;
-    cursor: pointer;
-    margin: 0 10px;
 }
 
-.filter-options div {
-    display: flex;
-    align-items: center;
+.close-filter-options img {
+    cursor: pointer;
+    margin: 5px 8px 0 0;
+    position: sticky;
+    top: 0;
+    height: 15px;
+    width: 15px;
+}
+
+.filter-elements div {
+    margin: 3px 0;
+}
+
+.filter-elements label:hover {
+    color: #a51f1f;
 }
 
 .main-content {
@@ -92,51 +121,14 @@ h4 {
 
 .card-small-wrapper {
     margin: 20px;
-    cursor: pointer;
 }
 
 .card-small {
     position: relative;
-    height: 320px;
+    height: 318px;
     width: 230px;
-    border: 3px solid yellow;
-    border-radius: 20px;
-    transform-style: preserve-3d;
-    transition: transform 1.5s linear;
-}
-
-.card-front-small {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    backface-visibility: hidden;
-    transform: rotateY(0deg);
-}
-
-.card-back-small {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    backface-visibility: hidden;
-    background-image: url(grafiken/pokemon-weltall.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: rotateY(180deg);
-}
-
-.card-back-small img {
-    height: 120px;
-    margin: 1em;
+    border: 4px solid #FFD800;
+    border-radius: 5px;
 }
 
 .card-header-small {
@@ -156,7 +148,7 @@ h4 {
     background-position: center;
     background-size: contain;
     border: black solid 2px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .element-icon {
@@ -173,4 +165,47 @@ h4 {
 .show-more {
     display: flex;
     justify-content: center;
+}
+
+.backtotop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3e3939;
+    cursor: pointer;
+    border: 1px solid #3e3939;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    right: 50px;
+    top: 90vh;
+}
+
+.backtotop:hover {
+    transform: scale(1.2);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* Breite des Scrollbalkens */
+    height: 10px;
+    /* Höhe des Scrollbalkens (bei horizontalen Scrollbalken) */
+}
+
+.filter-options::-webkit-scrollbar-track {
+    background-color: #3e3939;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FFD800;
 }

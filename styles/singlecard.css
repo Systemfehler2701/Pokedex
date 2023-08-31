@@ -1,0 +1,129 @@
+.background-blur {
+    position: fixed;
+    z-index: 2;
+    top: 120px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 5px;
+    width: -webkit-fill-available;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    justify-content: space-between;
+}
+
+.card-header h2 {
+    font-size: 18px;
+}
+
+.card-header h4 {
+    font-size: 12px;
+}
+
+.card-pic {
+    height: 117px;
+    width: 205px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-pic img {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 20px;
+}
+
+.element-pic {
+    display: flex;
+    align-items: center;
+}
+
+.element-pic img {
+    height: 20px;
+    margin: 0 0 5px 5px;
+}
+
+.card-info {
+    height: 166px;
+    width: -webkit-fill-available;
+}
+
+.card-info-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+#pokemonStats {
+    overflow: auto;
+    max-height: 147px;
+    min-height: 147px;
+}
+
+.about-info {
+    margin: 0.9em 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.about-info span:first-child {
+    font-weight: bold;
+    margin-right: 1.5em;
+}
+
+.moves {
+    height: fit-content;
+    width: 200px;
+    margin: 4px 0;
+    border: 1px solid black;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.moves span {
+    font-size: 13px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.arrow-right {
+    position: absolute;
+    top: 86px;
+    right: 10px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.arrow-left {
+    position: absolute;
+    top: 86px;
+    left: 10px;
+    height: 18px;
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+
+canvas {
+    background-color: rgba(255, 255, 255, 0.70);
+}

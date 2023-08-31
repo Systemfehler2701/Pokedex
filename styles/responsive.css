@@ -32,7 +32,7 @@
 
 @media(max-width: 400px) {
     .card-small-wrapper {
-        margin: 5px;
+        margin: 2px;
     }
     .card-small {
         height: 190px;

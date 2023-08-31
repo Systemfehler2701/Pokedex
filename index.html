@@ -6,23 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="grafiken/pokeball1.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="singlecard.css">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="type.css">
-    <link rel="stylesheet" href="responsive.css">
-    <script src="script.js"></script>
-    <script src="filter.js"></script>
-    <script src="singlecard.js"></script>
-    <script src="chart.js"></script>
-
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/singlecard.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/type.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="script/script.js"></script>
+    <script src="script/filter.js"></script>
+    <script src="script/data.js"></script>
+    <script src="script/singlecard.js"></script>
+    <script src="script/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <title>Pokedex</title>
 </head>
 
 <body onload="init();">
     <div class="header">
-        <h1>Pokedex</h1>
+        <div class="headline">
+            <img src="grafiken/pokeball1.png">
+            <h1>Pokedex</h1>
+        </div>
         <div class="search-pokemon">
             <div class="options">
                 <input id="pokemon-input" onkeyup="renderAllPokemonsWithFilter()" placeholder="Search Pokemon">
@@ -36,7 +40,11 @@
         <div class="main-content" id="main-content">
         </div>
     </div>
-    <div class="pokemon-info d-none" id="pokemonInfo">
+    <div class="background-blur d-none" onclick="closeSingleCrad();">
+
+    </div>
+    <div class="backtotop d-none" id="backtotop" onclick="document.querySelector('html').scrollTop=0;">
+        <img src="grafiken/arrow-up-yellow.png" alt="">
     </div>
 
 </body>

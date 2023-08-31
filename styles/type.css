@@ -1,0 +1,143 @@
+.details .bug {
+    background-color: rgb(102, 143, 55);
+}
+
+.details .dark {
+    background-color: rgb(106, 36, 136);
+}
+
+.details .dragon {
+    background-color: rgb(235, 113, 113);
+}
+
+.details .electric {
+    background-color: rgb(245, 222, 91);
+}
+
+.details .fairy {
+    background-color: rgb(252, 188, 248);
+}
+
+.details .fighting {
+    background-color: rgb(156, 53, 53);
+}
+
+.details .fire {
+    background-color: rgb(255, 156, 75);
+}
+
+.details .flying {
+    background-color: rgb(233, 250, 255);
+}
+
+.details .ghost {
+    background-color: rgb(126, 97, 173);
+}
+
+.details .grass {
+    background-color: rgb(67, 153, 86);
+}
+
+.details .ground {
+    background-color: rgb(129, 82, 82);
+}
+
+.details .ice {
+    background-color: rgb(223, 247, 255);
+}
+
+.details .normal {
+    background-color: rgb(161, 165, 167);
+}
+
+.details .poison {
+    background-color: rgb(141, 103, 202);
+}
+
+.details .psychic {
+    background-color: rgb(131, 35, 91);
+}
+
+.details .rock {
+    background-color: rgb(139, 119, 50);
+}
+
+.details .steel {
+    background-color: rgb(68, 68, 68);
+}
+
+.details .water {
+    background-color: rgb(69, 71, 196);
+}
+
+.bug {
+    background-color: rgba(137, 255, 3, 0.5);
+}
+
+.dark {
+    background-color: rgb(106, 36, 136, 0.5);
+}
+
+.dragon {
+    background-color: rgb(241, 110, 87, 0.5);
+}
+
+.electric {
+    background-color: rgb(238, 205, 18, 0.5);
+}
+
+.fairy {
+    background-color: rgba(248, 41, 238, 0.5);
+}
+
+.fighting {
+    background-color: rgb(240, 118, 43, 0.5);
+}
+
+.fire {
+    background-color: rgb(233, 67, 38, 0.5);
+}
+
+.flying {
+    background-color: rgb(73, 196, 230, 0.5);
+}
+
+.ghost {
+    background-color: rgb(126, 97, 173, 0.5);
+}
+
+.grass {
+    background-color: rgba(78, 119, 15, 0.5);
+}
+
+.ground {
+    background-color: rgb(129, 82, 82, 0.5);
+}
+
+.ice {
+    background-color: rgb(223, 247, 255, 0.5);
+}
+
+.normal {
+    background-color: rgb(161, 165, 167, 0.5);
+}
+
+.poison {
+    background-color: rgb(141, 103, 202, 0.5);
+}
+
+.psychic {
+    background-color: rgb(131, 35, 91, 0.5);
+}
+
+.rock {
+    background-color: rgb(139, 119, 50, 0.5);
+}
+
+.steel {
+    background-color: rgb(68, 68, 68, 0.5);
+}
+
+.water {
+    background-color: rgb(69, 71, 196, 0.5);
+}

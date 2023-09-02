@@ -3,7 +3,7 @@
 }
 
 .details .dark {
-    background-color: rgb(106, 36, 136);
+    background-color: rgb(60, 23, 75);
 }
 
 .details .dragon {
@@ -27,11 +27,11 @@
 }
 
 .details .flying {
-    background-color: rgb(233, 250, 255);
+    background-color: rgb(159, 222, 241);
 }
 
 .details .ghost {
-    background-color: rgb(126, 97, 173);
+    background-color: rgb(94, 30, 167);
 }
 
 .details .grass {
@@ -71,43 +71,43 @@
 }
 
 .bug {
-    background-color: rgba(137, 255, 3, 0.5);
+    background-color: rgba(102, 143, 55, 0.5);
 }
 
 .dark {
-    background-color: rgb(106, 36, 136, 0.5);
+    background-color: rgb(60, 23, 75, 0.5);
 }
 
 .dragon {
-    background-color: rgb(241, 110, 87, 0.5);
+    background-color: rgb(235, 113, 113, 0.5);
 }
 
 .electric {
-    background-color: rgb(238, 205, 18, 0.5);
+    background-color: rgb(245, 222, 91, 0.5);
 }
 
 .fairy {
-    background-color: rgba(248, 41, 238, 0.5);
+    background-color: rgba(252, 188, 248, 0.5);
 }
 
 .fighting {
-    background-color: rgb(240, 118, 43, 0.5);
+    background-color: rgba(156, 53, 53, 0.5);
 }
 
 .fire {
-    background-color: rgb(233, 67, 38, 0.5);
+    background-color: rgb(255, 156, 75, 0.5);
 }
 
 .flying {
-    background-color: rgb(73, 196, 230, 0.5);
+    background-color: rgb(159, 222, 241, 0.5);
 }
 
 .ghost {
-    background-color: rgb(126, 97, 173, 0.5);
+    background-color: rgb(94, 30, 167, 0.5);
 }
 
 .grass {
-    background-color: rgba(78, 119, 15, 0.5);
+    background-color: rgba(67, 153, 86, 0.5);
 }
 
 .ground {

@@ -66,6 +66,10 @@ h4 {
     width: 300px;
 }
 
+.search-pokemon button {
+    cursor: pointer;
+}
+
 .options input {
     width: 120px;
     margin: 0 20px;
@@ -79,7 +83,7 @@ h4 {
 .filter-options {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     width: 120px;
@@ -93,6 +97,8 @@ h4 {
 .close-filter-options {
     display: flex;
     justify-content: flex-end;
+    position: sticky;
+    top: 0;
 }
 
 .close-filter-options img {
@@ -195,6 +201,10 @@ h4 {
 
 .filter-options::-webkit-scrollbar-track {
     background-color: #3e3939;
+}
+
+#pokemonStats::-webkit-scrollbar-track {
+    background-color: #55555546;
 }
 
 ::-webkit-scrollbar-track {

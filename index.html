@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="styles/animation.css">
     <link rel="stylesheet" href="styles/responsive.css">
     <script src="script/script.js"></script>
+    <script src="script/template.js"></script>
     <script src="script/filter.js"></script>
-    <script src="script/data.js"></script>
     <script src="script/singlecard.js"></script>
     <script src="script/chart.js"></script>
+    <script src="script/animation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <title>Pokedex</title>
 </head>
@@ -32,13 +33,14 @@
                 <input id="pokemon-input" onkeyup="renderAllPokemonsWithFilter()" placeholder="Search Pokemon">
             </div>
             <button onclick="openFilterOptions()">Filter by type</button>
-            <div class="filter-window" id="filter-window">
-            </div>
+
         </div>
     </div>
     <div class="content-wrapper">
         <div class="main-content" id="main-content">
         </div>
+    </div>
+    <div class="filter-window" id="filter-window">
     </div>
     <div class="background-blur d-none" onclick="closeSingleCrad();">
 

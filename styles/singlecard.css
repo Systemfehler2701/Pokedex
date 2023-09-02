@@ -23,11 +23,15 @@
 }
 
 .card-header h2 {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .card-header h4 {
-    font-size: 12px;
+    font-size: 10px;
+}
+
+h3:hover {
+    color: rgb(71, 71, 71);
 }
 
 .card-pic {

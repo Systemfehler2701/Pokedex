@@ -1,6 +1,5 @@
 .card-small {
     transform-style: preserve-3d;
-    transition: transform 0.5s linear;
 }
 
 .card-small .front,
@@ -19,6 +18,8 @@
     justify-content: space-evenly;
     transform: rotateY(0deg);
     cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s linear(0, 1 50%, 1);
 }
 
 .card-small .back {
@@ -31,8 +32,21 @@
     transform: rotateY(180deg);
 }
 
-.card-small.flipped {
-    /*transform: rotateY(360deg) scale(2);*/
-    /*transition: transform 0.5s, width 0.5s, height 0.5s;*/
+.details {
+    opacity: 0;
+    transition: opacity 0.5s linear(0, 0 50%, 1);
+}
+
+.card-small.open {
     z-index: 5;
+}
+
+.card-small.open .details {
+    opacity: 1;
+    transition: opacity 0.5s linear(0, 1 50%, 1);
+}
+
+.card-small.open .front {
+    opacity: 0;
+    transition: opacity 0.5s linear(0, 0 50%, 1);
 }

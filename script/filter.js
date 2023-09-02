@@ -1,21 +1,6 @@
 let checkboxes = [];
 let types = ['Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water'];
 
-function renderFilterOptions() {
-    let content = document.getElementById('filter-window');
-    content.innerHTML = '';
-    let typeFilter = '';
-    for (let i = 0; i < types.length; i++) {
-        const element = types[i];
-        typeFilter += `<div><input type="checkbox" id="${element.toLowerCase()}" value="${element.toLowerCase()}" class="type"><label for="${element.toLowerCase()}">${element}</label></div>`;
-    }
-    content.innerHTML = `<div class="filter-options d-none" id="filter-options"><div class="close-filter-options">
-    <img src="grafiken/close-white.png" onclick="closeFilterOptions()"></div><div class="filter-elements">${typeFilter}</div>
-    </div>`;
-    checkboxes = document.querySelectorAll('.type');
-    addEventListeners();
-}
-
 function openFilterOptions() {
     document.getElementById('filter-options').classList.remove('d-none');
 }
@@ -63,6 +48,7 @@ function renderFilteredPokemons(filterName, filterType, content) {
             renderPokemon(content);
         }
     });
+    addAllElementsToListener();
 }
 
 //rendert alle Pokemon nach gefiltertem Typ

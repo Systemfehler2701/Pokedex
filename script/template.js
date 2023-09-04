@@ -35,7 +35,7 @@ function renderFilterOptions() {
     checkboxes = document.querySelectorAll('.type');
     addEventListeners();
 }
-
+//baut die pokemon karte für die detailerte Ansicht
 function generatePokemonInfo(content) {
     let img = currentPokemon.sprites.other.home.front_default != null ? currentPokemon.sprites.other.home.front_default : currentPokemon.sprites.other["official-artwork"].front_default;
     content.innerHTML = `<div class="card ${currentPokemon.types[0].type.name}">

@@ -85,3 +85,13 @@ function addAllElementsToListener() {
         }
     });
 }
+
+window.onresize = function(e) {
+    let element = document.querySelector('.open');
+    if (element == null) {
+        return;
+    }
+    let cardCoordinates = generateCardPosition(element.parentElement);
+    element.style.transition = `transform 0s`;
+    element.style.transform = `rotateY(360deg) translate(${cardCoordinates.offsetX}px, ${cardCoordinates.offsetY}px) scale(2)`;
+}

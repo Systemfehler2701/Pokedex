@@ -34,8 +34,27 @@ async function loadPokemons(url) {
         .catch(error => {
             console.error('Ein Fehler ist aufgetreten:', error);
         });
+    await generateGermanNames(tempPokemons);
 }
 
+async function generateGermanNames(tempPokemons) {
+    const gerPokemonUrls = tempPokemons.results.map(pokemon => pokemon.url.replace('pokemon', 'pokemon-species'));
+    await fetchPokemonsUrls(gerPokemonUrls)
+        .then(data => {
+            for (let i = 0; i < data.length; i++) {
+                const pokemonTranslated = data[i];
+                const germanName = pokemonTranslated.names[5].name;
+                allPokemons[pokemonTranslated.id - 1].name = germanName;
+            }
+        })
+        .catch(error => {
+            console.error('Ein Fehler ist aufgetreten:', error);
+        });
+
+}
+
+
+//holt Details zu jedem Pokemon
 async function fetchPokemonsUrls(urls) {
     try {
         const fetchPromises = urls.map(url => fetch(url)); // Erzeugen von Array mit Fetch-Promises für jede URL        

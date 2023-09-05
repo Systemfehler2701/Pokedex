@@ -108,7 +108,13 @@ h3:hover {
 }
 
 .overflow-hidden {
-    overflow: hidden !important;
+    overflow-y: hidden !important;
+    background-position: calc(50% - 5px) 0% !important;
+}
+
+.overflow-hidden .content-wrapper,
+.overflow-hidden .header {
+    margin-right: 10px;
 }
 
 .arrow-right {

@@ -5,13 +5,14 @@ html {
 
 body {
     margin: 0;
-    background-image: url(/grafiken/pokeball-lichtring.png);
+    background-image: url(../grafiken/pokeball-lichtring.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     user-select: none;
     font-family: 'Roboto';
+    overflow-x: hidden;
 }
 
 h1 {

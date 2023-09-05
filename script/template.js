@@ -35,12 +35,12 @@ function renderFilterOptions() {
     checkboxes = document.querySelectorAll('.type');
     addEventListeners();
 }
-//baut die pokemon karte für die detailerte Ansicht
+//baut die pokemon karte für die detailierte Ansicht
 function generatePokemonInfo(content) {
     let img = currentPokemon.sprites.other.home.front_default != null ? currentPokemon.sprites.other.home.front_default : currentPokemon.sprites.other["official-artwork"].front_default;
     content.innerHTML = `<div class="card ${currentPokemon.types[0].type.name}">
-    <img class="arrow-right" src="/grafiken/arrow-black.png" onclick="nextPokemon(this)">
-    <img class="arrow-left" src="/grafiken/arrow-black.png" onclick="prevPokemon(this)">
+    <img class="arrow-right" src="./grafiken/arrow-black.png" onclick="nextPokemon(this)">
+    <img class="arrow-left" src="./grafiken/arrow-black.png" onclick="prevPokemon(this)">
     <div class="card-header">
         <h4>#${currentPokemon.id}</h4>
         <h2>${currentPokemon.name}</h2>

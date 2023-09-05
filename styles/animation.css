@@ -25,7 +25,7 @@
 .card-small .back {
     justify-content: center;
     border-radius: 20px;
-    background-image: url(/grafiken/pokemon-weltall.jpg);
+    background-image: url(../grafiken/pokemon-weltall.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

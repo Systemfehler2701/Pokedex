@@ -43,6 +43,9 @@ async function generateGermanNames(tempPokemons) {
         .then(data => {
             for (let i = 0; i < data.length; i++) {
                 const pokemonTranslated = data[i];
+                if (pokemonTranslated.names == null || pokemonTranslated.names[5] == null || pokemonTranslated.names[5].name == null) {
+                    return;
+                }
                 const germanName = pokemonTranslated.names[5].name;
                 allPokemons[pokemonTranslated.id - 1].name = germanName;
             }

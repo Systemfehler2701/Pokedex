@@ -9,15 +9,6 @@ const CONFIG_BORDER_COLOR = [
     'rgba(0, 0, 0, 1)'
 ];
 
-/*const CONFIG_CHART_OPTIONS = {
-    scales: {
-        y: {
-            beginAtZero: true
-        }
-    }
-};*/
-
-
 function drawChart() {
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
